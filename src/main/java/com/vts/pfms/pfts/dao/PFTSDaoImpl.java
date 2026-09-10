@@ -492,6 +492,7 @@ public  class PFTSDaoImpl implements PFTSDao{
 	private static final String PMMGPROCUREMENTDATA = """
 	        SELECT DemandNo, DemandDate, ProjectCode, ItemName, SONo, SODate, DPDate, FirmName, ProcurementStage
 	        FROM imapmmgpms_dmddetails
+	        ORDER BY DemandDate DESC
 	        """;
 
 //	private static final String PMMGPROCUREMENTDATA = "SELECT * FROM imapmmgpms_dmddetails";

@@ -33,6 +33,7 @@
 						<table class="table table-bordered table-hover table-striped table-condensed dataTable" id="myTable" >
 							<thead class="center">
 								<tr>
+									<th>SN</th>
 									<th>Demand No</th>
 									<th>Demand Date</th>
 									<th>Project Code</th>
@@ -49,15 +50,16 @@
 								int slno = 0;
 								for (PmmgPmsDmdDetails dmd : pmmgPmsDmdDetails) { %>
 									<tr class="center">
-										<td><%=dmd.getDemandNo() %></td>
-										<td><%=dmd.getDemandDate()!=null ? fc.SqlToRegularDate(dmd.getDemandDate()) : "-" %></td>
-										<td><%=dmd.getProjectCode() %></td>
-										<td class="left"><%=dmd.getItemName() %></td>
-										<td><%=dmd.getSoNo() %></td>
-										<td><%=dmd.getSoDate()!=null ? fc.SqlToRegularDate(dmd.getSoDate()) : "-" %></td>
-										<td><%=dmd.getDpDate()!=null ? fc.SqlToRegularDate(dmd.getDpDate()) : "-" %></td>
-										<td class="left"><%=dmd.getFirmName() %></td>
-										<td><%=dmd.getProcurementStage() %></td>
+										<td width="5%"><%=++slno %></td>
+										<td width="10%"><%=dmd.getDemandNo() %></td>
+										<td width="10%"><%=dmd.getDemandDate()!=null ? fc.SqlToRegularDate(dmd.getDemandDate()) : "-" %></td>
+										<td width="10%"><%=dmd.getProjectCode() %></td>
+										<td width="10%" class="left"><%=dmd.getItemName() %></td>
+										<td width="10%"><%=dmd.getSoNo() %></td>
+										<td width="10%"><%=dmd.getSoDate()!=null ? fc.SqlToRegularDate(dmd.getSoDate()) : "-" %></td>
+										<td width="10%"><%=dmd.getDpDate()!=null ? fc.SqlToRegularDate(dmd.getDpDate()) : "-" %></td>
+										<td width="15%" class="left"><%=dmd.getFirmName() %></td>
+										<td width="10%"><%=dmd.getProcurementStage() %></td>
 									</tr>
 								<% } %>
 							</tbody>
