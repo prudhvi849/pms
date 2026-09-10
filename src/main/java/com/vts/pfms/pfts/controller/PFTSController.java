@@ -1800,6 +1800,21 @@ public class PFTSController {
 				return "static/Error";
 			}
 		}
-		
+	
+	@RequestMapping(value = "PmmgPmsDmdDetails.htm", method = { RequestMethod.GET, RequestMethod.POST })
+	public String pmmgPmsDmdDetails(HttpServletRequest req, HttpSession ses, RedirectAttributes redir) throws Exception {
+
+		String UserId = (String) ses.getAttribute("Username");
+
+		logger.info(new Date() + "Inside PmmgPmsDmdDetails.htm " + UserId);
+		try {
+			req.setAttribute("pmmgPmsDmdDetails", service.getPMMGProcurementData());
+			return "pfts/PmmgPmsDmdDetails";
+		} catch (Exception e) {
+			e.printStackTrace();
+			logger.error(new Date() + " Inside PmmgPmsDmdDetails.htm " + UserId, e);
+			return "static/Error";
+		}
+	}
 }
 
